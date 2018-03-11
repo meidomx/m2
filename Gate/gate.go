@@ -1,1 +1,5 @@
-package Gate
+package main
+
+func main() {
+
+}

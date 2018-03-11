@@ -27,14 +27,14 @@ end;
 
 func Decode(src string) (string, error) {
 	sDest := ReverseStrBytes(Trim(src))
-	sDest, err := DecryStrHex(sDest, IntToStr(398432431/*{240621028}*/))
+	sDest, err := DecryStrHex(sDest, COMMON_DECRYPT_KEY)
 	if err != nil {
 		return "", err;
 	}
 	return "", nil
 }
 
-func DecryStrHex(src, str string) (string, error) {
+func DecryStrHex(src, key string) (string, error) {
 	//TODO
 	return "", nil
 }
