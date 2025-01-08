@@ -2,10 +2,8 @@ package edcode_test
 
 import (
 	"testing"
-)
 
-import (
-	"gorepo.moetang.info/prod/m2/common/edcode"
+	edcode "github.com/meidomx/m2/common"
 )
 
 func TestReverseStr(t *testing.T) {

@@ -1,16 +1,14 @@
 package logserver
 
 import (
-	"github.com/atnet/gof/log"
 	"io"
+	"log"
 	"net"
 	"os"
 	"path/filepath"
 	"time"
-)
 
-import (
-	gobytes "moetang.info/go/nekoq/util/bytes"
+	edcode "github.com/meidomx/m2/common"
 )
 
 const BASE_DIR string = "./LogData/"
@@ -46,15 +44,15 @@ func (this *LogEntry) Write(w io.Writer) error {
 		return err
 	}
 
-	err = gobytes.WriteInt64BE(w, this.LogTime)
+	err = edcode.WriteInt64BE(w, this.LogTime)
 	if err != nil {
 		return err
 	}
 
-	err = gobytes.WriteInt64BE(w, int64(len(this.Data))&int64(0xFFFFFFFF))
+	err = edcode.WriteInt64BE(w, int64(len(this.Data))&int64(0xFFFFFFFF))
 	if err != nil {
 		return err
-	}``
+	}
 
 	_, err = w.Write(this.Data)
 	if err != nil {

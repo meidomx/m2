@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gorepo.moetang.info/prod/m2/LogDataServer/logserver"
+	"github.com/meidomx/m2/LogDataServer/logserver"
 )
 
 func main() {
